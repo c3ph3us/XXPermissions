@@ -85,9 +85,9 @@ public final class XXPermissions {
             call.hasPermission(mPermissions, true);
         } else {
             //检测权限有没有在清单文件中注册
-            PermissionUtils.checkPermissions(mActivity, mPermissions);
+            PermissionUtils.checkPermissions(mActivity, failPermissions);
             //申请没有授予过的权限
-            PermissionFragment.newInstant((new ArrayList<>(mPermissions)), mConstant).prepareRequest(mActivity, call);
+            PermissionFragment.newInstant((new ArrayList<>(failPermissions)), mConstant).prepareRequest(mActivity, call);
         }
     }
 
